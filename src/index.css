@@ -208,7 +208,25 @@
   transform: scale(0.75);
 }
 
-.sumbitcommentbutton{
-  
+.sumbitcommentbutton textarea {
+  flex-grow: 1;              
+  height: 100%;
+  width: 60vw;               
+  padding: 2vw;              
+  border-radius: 5px;         
+  border: 1px solid #ccc;     
+  resize: none;              
 }
 
+.sumbitcommentbutton input[type="submit"]{
+  margin-bottom: 10px;
+  margin-left: 2%;
+  height: 100%;
+  width: 100%;
+  padding: 2.3vw;
+  border: 1px solid #ccc;
+  color:var(--colour2);
+  background-color: var(--colour1);
+  border-radius: 11px; 
+  font-size:1em;
+}

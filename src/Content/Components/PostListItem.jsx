@@ -43,7 +43,7 @@ export default function PostListItem({ element, users }) {
 
             <h3>Comments</h3>
             <ul className="commentlist">
-                <Comments users={users} comments={comments}/>
+                <Comments users={users} comments={comments} fetchComments={fetchComments} postId={element.id}/>
             </ul>
 
         </li>

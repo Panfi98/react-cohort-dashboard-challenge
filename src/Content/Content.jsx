@@ -13,10 +13,8 @@ export default function Content() {
 
     return (
         <div className='contentclass' >
-
-                <Form />
-                <PostList elements={posts}/>
-
+            <Form />
+            <PostList elements={posts} />
         </div>
     )
 }
