@@ -14,7 +14,7 @@
 /* Styling header*/
 
 .headerdiv {
-  width: 100vw;
+  width: auto;
   height: 20vh;
   display: grid;
   grid-template-columns: [first] 85% [second] auto;
@@ -41,8 +41,8 @@
 
 .roundInitials {
 
-  width: 13vmin;
-  height: 13vmin;
+  width: 10vmin;
+  height: 10vmin;
   background-color: rgb(152, 202, 234);
   color:#fbfcfc;
   border-radius: 50%;
@@ -50,12 +50,13 @@
   justify-content: center;
   align-items: center;
   font-size: calc(var(30vw));
+  margin-left: 10px;
 }
 
 /* Layout */
 .layout {
   display: grid;
-  grid-template-columns: [first] 15% [second] auto;
+  grid-template-columns: [first] 15% [second] 85%;
 }
 
 .sidebar {
@@ -64,7 +65,7 @@
   justify-content: center;
   grid-column: 1;
   height: 120vh;
-
+  padding: 0 0 0 0;
 }
 
 
@@ -78,6 +79,7 @@
 .links li {                    
   align-items: center;  
   text-align: center; 
+
 }
 
 .homeIcon{
@@ -102,6 +104,8 @@
 .contentclass {
   grid-column: 2;
   background-color: #79bad4;
+  height:100%;
+  width: 100%;
 }
 
 .createTopic{
@@ -109,12 +113,9 @@
   align-items: center;
   justify-content: center;
   background-color: var(--colour2);
-  padding:0;
+  padding:0 0 0 0;
 }
 
-.circlepost{
-  transform: scale(0.69);
-}
 
 .fillinform{
   display:flex;
@@ -158,3 +159,56 @@
 .single-post{
   transform: scale(0.7);
 }
+
+.listelemnt{
+  border-radius: 5px;
+  background-color: #e6ebf5;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+.listelemnt div{
+  display:flex;
+  justify-content: left;
+  align-items: center;
+  
+}
+
+.listelemnt p{
+  margin-left: 10px;
+}
+
+.listelemnt h3{
+  margin-left:10px;
+}
+
+.listelemnt ul{
+  list-style-type: none;
+} 
+
+.comment{
+  display:flex;
+  height: 100px;
+  justify-content:left;
+  align-items: center;
+  background-color: #ccdbea;
+  margin-right: 30px;
+  margin-bottom: 10px ;
+  padding: 5px;
+  border-radius: 11px; 
+}
+
+.commentcontent{
+  margin-left:10px;
+}
+
+.commentcircle{
+  transform: scale(0.75);
+}
+
+.sumbitcommentbutton{
+  
+}
+

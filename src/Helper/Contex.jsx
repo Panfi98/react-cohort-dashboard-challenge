@@ -5,10 +5,12 @@ export const ContentContext = createContext();
 export default function PostContext({ children }) {
     const [posts, setPosts] = useState([])
     const [newPost,setNewPost] = useState()
-    const [users, SetUsers] = useState([])
+    const [users, setUsers] = useState([])
+    const [comments, setComments] = useState([])
 
     const url = 'https://boolean-uk-api-server.fly.dev/panfi98/post'
     const userUrl = 'https://boolean-uk-api-server.fly.dev/panfi98/contact/'
+    const commentUrl= 'https://boolean-uk-api-server.fly.dev/panfi98/post/2/comment'
 
 
 
@@ -30,8 +32,15 @@ export default function PostContext({ children }) {
     const getUserData = async () => {
         const response = await fetch(userUrl)
         const data = await response.json()
-        SetUsers(data)
+        setUsers(data)
     }
+
+    const getCommentByPost = async (postId) =>{
+        const response = await fetch(url + `/${postId}/` + 'comment')
+        const data = await response.json()
+        setComments(data)
+    }
+
 
     useEffect(() => {
         getUserData()
@@ -46,11 +55,13 @@ export default function PostContext({ children }) {
             value={{
                 posts: posts,
                 newPost: newPost,
-                setNewPost:setNewPost,
+                comments: comments,
+                users: users,
+                setNewPost: setNewPost,
                 getPosts: getPosts,
                 createPost: createPost,
                 getUserData: getUserData,
-                users: users
+                getCommentByPost: getCommentByPost
             }}>
             {children}
         </ContentContext.Provider>
