@@ -29,6 +29,13 @@ export default function PostContext({ children }) {
         setPosts(data)
     }
 
+    const getAPost = async (id) => {
+        const response = await fetch(url + `/${id}`)
+        const data = await response.json()
+        setPost(data)    
+
+    }
+
     const getUserData = async () => {
         const response = await fetch(userUrl)
         const data = await response.json()
@@ -38,6 +45,7 @@ export default function PostContext({ children }) {
     const getCommentByPost = async (postId) =>{
         const response = await fetch(url + `/${postId}/` + 'comment')
         const data = await response.json()
+        console.log('success')
         setComments(data)
     }
 
@@ -61,7 +69,8 @@ export default function PostContext({ children }) {
                 getPosts: getPosts,
                 createPost: createPost,
                 getUserData: getUserData,
-                getCommentByPost: getCommentByPost
+                getCommentByPost: getCommentByPost,
+                getAPost: getAPost
             }}>
             {children}
         </ContentContext.Provider>

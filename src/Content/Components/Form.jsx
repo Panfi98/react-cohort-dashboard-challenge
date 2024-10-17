@@ -6,7 +6,7 @@ export default function Form() {
     const [postData, setPostData] = useState({
         title:'uknown',
         content:'',
-        contactId: 1 // use 
+        contactId: 1  
     })
     const {createPost} = useContext(ContentContext)
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProfileCircle from "../../Helper/profileCircle";
 
-export default function Comment({ comment, users }) {
+export default function CommentMessage({ comment, users }) {
     const [id, setId] = useState(comment.contactId)
     const [user, setUser] = useState(users.find(user => user.id === id))
 
@@ -15,15 +15,13 @@ export default function Comment({ comment, users }) {
     )
 
     return (
-        <li className='comment'>
+        <div className='comment'>
             <div className='commentcircle'>
                 <ProfileCircle initials={initials} color={color} />
             </div>
-
             <div className='commentcontent'>
                 {comment.content}
             </div>
-
-        </li>
+        </div>
     )
 }

@@ -211,8 +211,8 @@
 .sumbitcommentbutton textarea {
   flex-grow: 1;              
   height: 100%;
-  width: 60vw;               
-  padding: 2vw;              
+  width: 30vw;               
+  padding: 1vw;              
   border-radius: 5px;         
   border: 1px solid #ccc;     
   resize: none;              
@@ -223,10 +223,16 @@
   margin-left: 2%;
   height: 100%;
   width: 100%;
-  padding: 2.3vw;
+  padding: 1vw;
   border: 1px solid #ccc;
   color:var(--colour2);
   background-color: var(--colour1);
   border-radius: 11px; 
   font-size:1em;
+}
+.horizontal{
+  display:flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
 }

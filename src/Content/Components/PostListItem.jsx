@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import ProfileCircle from "../../Helper/profileCircle";
 import { ContentContext } from "../../Helper/Contex";
-import Comment from "./Comments";
+
 import Comments from "./Comments";
+import { Link } from "react-router-dom";
 
 export default function PostListItem({ element, users }) {
     const context = useContext(ContentContext)
@@ -22,30 +23,34 @@ export default function PostListItem({ element, users }) {
         '#FFFFFF'
     )
 
-    const [comments, setComments]=useState([])
+    const [comments, setComments] = useState([])
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchComments(element.id)
-    },[])
+    }, [])
 
-    const fetchComments = async (postId) =>{
+    const fetchComments = async (postId) => {
         const response = await fetch(url + `/${postId}/` + 'comment')
         const data = await response.json()
         setComments(data)
     }
     return (
-        <li className="listelemnt">
+        <ul className="listelemnt">
             <div>
                 <ProfileCircle className='circlepost' initials={`${initials}`} color={color} />
-                <h2>{userName}</h2>
+                <div className="horizontal">
+                    <h2>{userName}<br /></h2>
+                    <Link to={`/post/${element.id}`}>{element.title}</Link>
+                </div>
             </div>
+
             <p>{postText}</p>
 
             <h3>Comments</h3>
             <ul className="commentlist">
-                <Comments users={users} comments={comments} fetchComments={fetchComments} postId={element.id}/>
+                <Comments users={users} comments={comments} fetchComments={fetchComments} postId={element.id} />
             </ul>
 
-        </li>
+        </ul>
     )
 }
